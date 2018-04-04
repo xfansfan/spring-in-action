@@ -32,5 +32,26 @@
         <version>4.3.14.RELEASE</version>
         <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
+	<dependency>
+	    <groupId>com.github.stefanbirkner</groupId>
+	    <artifactId>system-rules</artifactId>
+	    <version>1.2.0</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		
+		<dependency>  
+		    <groupId>org.codehaus.plexus</groupId>  
+		    <artifactId>plexus-utils</artifactId>  
+		    <version>3.0</version>  
+		</dependency>
+    
   </dependencies>
 </project>
