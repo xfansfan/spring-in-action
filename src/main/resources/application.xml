@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+<!-- constructor inject start -->
+<!-- 
+	<bean id="sgtPeppers" class="com.alex.springinaction.soundsystem.SgtPeppers">
+	</bean> -->
+	
+	<!-- with constructor arg -->
+<!-- 	<bean id="cdPlayer"
+		class="com.alex.springinaction.soundsystem.CDPlayer">
+		<constructor-arg ref="compactDisc"></constructor-arg>
+	</bean> -->
+	
+	<!-- with c namespace, arg name -->
+<!-- 	<bean id="cdPlayer" class="com.alex.springinaction.soundsystem.CDPlayer" c:cd-ref="compactDisc">
+	</bean> -->
+	
+	<!-- with c namespace, arg index -->
+<!-- 	<bean id="cdPlayer" class="com.alex.springinaction.soundsystem.CDPlayer" c:_0-ref="compactDisc">
+	</bean> -->
+	
+	<!-- constructor inject -->
+<!-- 	<bean id="compactDisc"
+		class="com.alex.springinaction.soundsystem.BlankDisc">
+		<constructor-arg
+			value="Sgt. Pepper's Lonely Hearts Club Band;">
+		</constructor-arg>
+		<constructor-arg value="The Beatles"></constructor-arg>
+		<constructor-arg type="java.util.List">
+			<list>
+				<value>Sgt. Pepper's Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+				<value>Lucy in the Sky with Diamonds</value>
+				<value>Getting Better</value>
+				<value>Fixing a Hole</value>
+			</list>
+		</constructor-arg>
+	</bean> -->
+	
+	<!-- with c namespace, value arg -->
+	<!-- <bean id="compactDisc"
+		class="com.alex.springinaction.soundsystem.BlankDisc"
+		c:_title="Sgt. Pepper's Lonely Hearts Club Band"
+		c:artist="The Beatles" />
+	 -->
+	<bean id="beatlesDiscography"
+		class="com.alex.springinaction.soundsystem.Discography">
+		<constructor-arg value="The Beatles"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="sgtPeppers" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- constructor inject end -->
+	
+	<!-- property inject start-->	
+	<bean id="cdPlayer"
+		class="com.alex.springinaction.soundsystem.CDPlayer">
+		<property name="cd" ref="compactDisc"></property>
+	</bean>
+	
+	<!-- with p namespace -->
+<!-- 		<bean id="cdPlayer"
+		class="com.alex.springinaction.soundsystem.CDPlayer" p:cd-ref="compactDisc"/> -->
+		
+<!-- 		<bean id="compactDisc"
+		class="com.alex.springinaction.soundsystem.BlankDisc">
+		<property name="title"
+			value="Sgt. Pepper's Lonely Hearts Club Band">
+		</property>
+		<property name="artist" value="The Beatles"></property>
+		<property name="tracks">
+			<list>
+				<value>Sgt. Pepper's Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+				<value>Lucy in the Sky with Diamonds</value>
+				<value>Getting Better</value>
+				<value>Fixing a Hole</value>
+			</list>
+			with util namespace
+			<util:list id="trackList">
+				<value>Sgt. Pepper's Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+				<value>Lucy in the Sky with Diamonds</value>
+				<value>Getting Better</value>
+				<value>Fixing a Hole</value>			
+			</util:list>
+		</property>
+	</bean>	 -->
+	
+	<!-- property inject end -->
+
+</beans>

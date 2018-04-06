@@ -13,6 +13,18 @@ public class CDPlayer implements MediaPlayer {
 
 	private CompactDisc cd;
 	
+	public CompactDisc getCd() {
+		return cd;
+	}
+	@Autowired
+	public void setCd(CompactDisc cd) {
+		this.cd = cd;
+	}
+	
+	public CDPlayer() {
+		
+	}
+
 	@Autowired
 	public CDPlayer(CompactDisc cd){
 		this.cd=cd;
