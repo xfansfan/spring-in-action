@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -20,6 +21,7 @@ import com.alex.springinaction.soundsystem.MediaPlayer;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=CDPlayerConfig.class)
 //@ContextConfiguration(locations = { "classpath*:**/test-context.xml" })
+//@ActiveProfiles("dev")
 public class CDPlayerTest {
 	
 	private final static Logger logger = LoggerFactory.getLogger(CDPlayerTest.class);

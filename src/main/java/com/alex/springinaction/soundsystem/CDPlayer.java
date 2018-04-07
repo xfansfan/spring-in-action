@@ -17,6 +17,7 @@ public class CDPlayer implements MediaPlayer {
 		return cd;
 	}
 	@Autowired
+	@Qualifier("lonelyHeartsClub")
 	public void setCd(CompactDisc cd) {
 		this.cd = cd;
 	}
@@ -32,6 +33,7 @@ public class CDPlayer implements MediaPlayer {
 	}
 	
 	@Autowired
+	@Qualifier("lonelyHeartsClub")
 	public void insertDisc(CompactDisc cd){
 		this.cd=cd;
 		logger.debug(this.cd.getClass().getSimpleName()+" has been wired in method insertDisc.");
