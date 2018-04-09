@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-
+	<!-- proxy mode, same as @Scope annotation with proxy mode parameter -->
 	<bean id="cart"
 		class="com.alex.springinaction.webapp.ShoppingCart" scope="session">
 		<aop:scoped-proxy proxy-target-class="false"/>
