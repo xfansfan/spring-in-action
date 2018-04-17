@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author alex
@@ -64,4 +65,10 @@ public class BlankDisc implements CompactDisc {
 		}
 	}
 
+	//method for getting values from property file, using Environment, @value annotation is resolve PropertySourcesPlaceholderConfigurer,
+	//which is defined in ExpressiveConfig
+	public BlankDisc(@Value("${disc.title}") String title) {
+		super();
+		this.title = title;
+	}
 }
